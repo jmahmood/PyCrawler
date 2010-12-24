@@ -1,3 +1,7 @@
+The original PyCrawler is great, but I want it to play nice with Django's ORM (and integrate Beautiful Soup 3.2 while I'm at it)
+
+Instead of taking 4 arguments and being run from the command line, PyCrawler Django has 3 variables that are defined before it is run.
+
 PyCrawler is very simple to use. It takes 4 arguments:
 
 1) database file name: The file that that will be used to store information as a sqlite database. If the filename given does not exist, it will be created.
