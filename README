@@ -1,14 +1,17 @@
 The original PyCrawler is great, but I want it to play nice with Django's ORM (and integrate Beautiful Soup 3.2 while I'm at it)
 
-Instead of taking 4 arguments and being run from the command line, PyCrawler Django has 3 variables that are defined before it is run.
+Instead of taking 4 arguments and being run from the command line, PyCrawler Django has one argument (a URL) and various configuration aids that are done directly in the model file itself.  
 
-PyCrawler is very simple to use. It takes 4 arguments:
+(They really should be in the settings file, but I didn't want to include a patch file.  If you think it's worth it, feel free to message me.
 
-1) database file name: The file that that will be used to store information as a sqlite database. If the filename given does not exist, it will be created.
+Thanks to theanti9 who put his pycrawler code up; it made my job a lot easier.  Take a look at his original version if you don't want any dependencies.
 
-2) start url: Crawlers need a place to start! This should be a valid url.
-   ex. http://www.mysite.com/
+__BUGS__
 
-3) crawl depth: This should be the number of pages deep the crawler should follow from the starting url before backing out.
+If you are running this on Ubuntu and getting unicode errors, it's because Ubuntu is using Beautiful Soup 3.101 or some other 3.1x branch version.  Do yourself a favour and install 3.2;
 
-4) verbose (optional): If you want PyCrawler to spit out the urls it is looking at, this should be "true" if it is missing, or has any other value, it will be ignored and considered false.
+    sudo apt-get remove beautifulsoup
+    
+    sudo easy_install beautifulsoup
+    
+If you run into anything like this, feel free to message me and I'll try to help you out.
